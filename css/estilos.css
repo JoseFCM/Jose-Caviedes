@@ -1,0 +1,781 @@
+/* Colores */
+:root {
+    --color-violeta: #8B48BF;
+    --color-violeta-hover: #c897ede9;
+    --color-violeta-claro: #ddc8ec;
+    --color-violeta-active: #500d83;
+    --color-azul-oscuro: #242E52;
+    --color-gris-hover: rgba(36, 46, 82, 0.6);
+    --color-blanco: #FFFFFF;
+    --color-text-gris: rgba(179, 178, 183, 1);
+    --color-footer: #1E1E26;
+    --color-celeste: #3CDDF3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Estilos barra de navegación */
+.barra-navegacion {
+    display: flex;
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.navegacion-logo {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+}
+
+.navegacion-menu {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navegacion-menu li {
+    display: inline;
+    margin: 0 35px 0 10px;
+}
+
+.navegacion-menu li a {
+    color: var(--color-azul-oscuro);
+    text-decoration: none;
+}
+
+.navegacion-menu li a:hover {
+    color: var(--color-gris-hover);
+}
+
+.navegacion-boton {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center
+}
+
+button.nav-boton-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    font-size: 16px;
+    height: 44px;
+    border-radius: 50px;
+    border: 1px solid var(--color-violeta);
+    background-color: var(--color-violeta);
+    color: var(--color-blanco);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-boton-contacto:hover {
+    color: var(--color-blanco);
+    cursor: pointer;
+}
+
+button.nav-boton-contacto:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-violeta-hover);
+    opacity: 0.5;
+    animation: fill 1.5s forwards;
+}
+
+button.nav-boton-contacto:active {
+    background-color: var(--color-violeta-active);
+    color: var(--color-blanco);
+}
+
+@keyframes fill {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.navegacion-movil {
+    display: none;
+}
+
+/* Estilos section portada */
+.contenedor-portada {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 550px;
+    margin: 25px auto;
+}
+
+.contenedor-portada-imagen {
+    display: flex;
+    justify-content: end;
+    flex-basis: 50%;
+}
+
+.portada-img {
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-portada-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+.portada-titulo {
+    width: 75%;
+    margin-top: 5px;
+    text-align: right;
+    font-size: 60px;
+    line-height: 57px;
+    font-weight: 700;
+}
+
+.portada-description {
+    width: 75%;
+    text-align: right;
+    font-size: 22px;
+    line-height: 157.1%;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.portada-contacto {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Estilos section pregunta y pasos */
+.contenedor-pregunta {
+    margin-top: 70px;
+    background: var(--color-violeta);
+    width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.cabecera-pregunta {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-blanco);
+}
+
+.cabecera-titulo {
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cabecera-titulo h2 {
+    width: 70%;
+    font-size: 44px;
+}
+
+.cabecera-descripcion {
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+.cabecera-descripcion-movil {
+    display: none;
+}
+
+#cabecera-descripcion {
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera-descripcion p {
+    width: 80%;
+    font-size: 20px;
+}
+
+.contenedor-pasos {
+    width: 80%;
+    height: 380px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.tarjeta-pasos {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.contenedor-boton-pasos {
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-pasos {
+    width: 70px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: var(--color-violeta);
+    border: 1px solid var(--color-violeta);
+    color: var(--color-blanco);
+}
+
+.btn-pasos-movil {
+    display: none;
+}
+
+.contenedor-informacion-pasos {
+    height: auto;
+    flex-basis: 85%;
+    font-size: 18px;
+}
+
+.pasos-titulo {
+    font-weight: bold;
+}
+
+.pasos-descripcion {
+    margin-top: 20px;
+    color: var(--color-text-gris);
+    width: 80%;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Estilos section mejores del mes */
+.contenedor-mejores-del-mes {
+    width: 80%;
+    margin: 150px auto;
+}
+
+.titulo-mejores-del-mes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-mejores-del-mes h1 {
+    font-size: 42px;
+}
+
+.contenido-mejores-del-mes {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tarjeta-mejores-del-mes {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-mejores-del-mes img {
+    width: 80px;
+}
+
+.tarjeta-mejores-del-mes h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tarjeta-mejores-del-mes p {
+    padding: 5px;
+    line-height: 1.5em;
+    font-size: 16px;
+    color: var(--color-text-gris);
+    text-align: center;
+}
+
+.contenedor-boton-mejores-del-mes {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-mejores-del-mes {
+    width: 175px;
+    height: 50px;
+    color: var(--color-blanco);
+    font-size: 18px;
+    background: var(--color-violeta);
+    border: 1px solid var(--color-violeta);
+    border-radius: 50px;
+}
+
+
+/* Estilos conoce equipo */
+.conoce-equipo {
+    width: 100%;
+    height: 200px;
+    background: var(--color-violeta);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja h1 {
+    width: 50%;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-blanco);
+}
+
+.caja a {
+    width: 150px;
+    height: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    background: var(--color-blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+/* Estilos footer */
+.footer {
+    width: 100%;
+    padding-bottom: 20px;
+    background: var(--color-footer);
+}
+
+.contenido-footer {
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.caja1 {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.contenido-caja1 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer {
+    width: 150px;
+    height: 60px;
+}
+
+.contenido-redes {
+    flex-grow: 1;
+}
+
+.footer-redes-sociales {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.footer-redes-sociales img {
+    width: 25px;
+    height: 25px;
+}
+
+.caja2 {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja2 ul {
+    list-style-type: none;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.caja2 ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.caja2 ul li a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-size: 18px;
+}
+
+.caja3 {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja3 ul {
+    list-style-type: none;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.caja3 ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.caja3 ul li a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-size: 18px;
+}
+
+.caja4 {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 70px;
+}
+
+.formulario input {
+    width: 280px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--color-blanco);
+    font-size: 16px;
+}
+
+.formulario button.animated-button {
+    width: 75px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: var(--color-violeta);
+    border: 1px solid var(--color-violeta);
+    color: var(--color-blanco);
+    overflow: hidden;
+    position: relative;
+}
+
+.formulario button.animated-button:hover {
+    color: var(--color-blanco);
+    cursor: pointer;
+}
+
+.formulario button.animated-button:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-violeta-hover);
+    opacity: 0.5;
+    animation: fill 1.5s forwards;
+}
+
+@keyframes fill {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+input[type="email"]::placeholder {
+    padding-left: 15px;
+}
+
+.copyright {
+    flex-basis: 20%;
+    text-align: center;
+    color: #c9c9c9;
+}
+
+
+/* --------------------------------------Media querie 480px -------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+    /* Estilos barra de navegacion */
+    .header-navegacion {
+        width: 100%;
+    }
+
+    .barra-navegacion {
+        width: 80%;
+        display: flex;
+    }
+
+    .navegacion-logo {
+        flex-basis: 75%;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .navegacion-menu {
+        display: none;
+    }
+
+    .navegacion-boton {
+        display: none;
+    }
+
+    .navegacion-movil {
+        flex-basis: 25%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navegacion-movil img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Estilos portada */
+    .contenedor-portada {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .contenedor-portada-imagen {
+        flex-basis: 100%;
+    }
+
+    .contenedor-portada-info {
+        flex-basis: 100%;
+        display: flex;
+    }
+
+    .portada-titulo {
+        margin-top: 50px;
+        width: 100%;
+        font-size: 38px;
+        line-height: 1.3em;
+    }
+
+    .portada-description {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .portada-contacto {
+        margin-top: 15px;
+    }
+
+    /* Estilos pregunta y pasos */
+    .contenedor-pregunta {
+        background: var(--color-celeste);
+        width: 100%;
+        height: 300px;
+    }
+
+    .cabecera-pregunta {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+    }
+
+    .cabecera-titulo {
+        flex-basis: 100%;
+    }
+
+    .cabecera-titulo h2 {
+        width: 90%;
+        font-size: 36px;
+    }
+
+    .cabecera-descripcion {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+    .cabecera-descripcion p {
+        font-size: 16px;
+    }
+
+    .cabecera-descripcion-escritorio {
+        display: none;
+    }
+
+    .cabecera-descripcion-movil {
+        display: flex;
+    }
+
+    .contenedor-pasos {
+        display: flex;
+        height: auto;
+        flex-flow: row wrap;
+    }
+
+    .contenedor-boton-pasos {
+        display: none;
+    }
+
+    .contenedor-informacion-pasos {
+        flex-basis: 100%;
+    }
+
+    .tarjeta-pasos {
+        flex-basis: 100%;
+        margin-top: 25px;
+    }
+
+    #pasos-titulo {
+        background: var(--color-violeta-claro);
+        display: flex;
+        height: 45px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        align-items: center;
+    }
+
+    .pasos-titulo {
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .btn-pasos-movil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 45px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        background-color: var(--color-violeta);
+        border: 1px solid var(--color-violeta);
+        color: var(--color-blanco);
+    }
+
+    .pasos-descripcion {
+        width: 90%;
+        padding-left: 10px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    /* Estilos mejores del mes */
+    .contenedor-mejores-del-mes {
+        margin: 80px auto;
+    }
+
+    .titulo-mejores-del-mes {
+        display: flex;
+        justify-content: center;
+    }
+
+    .titulo-mejores-del-mes h1 {
+        font-size: 36px;
+    }
+
+    .contenido-mejores-del-mes {
+        padding-top: 50px;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    #sanyo,
+    #navarro {
+        display: none;
+    }
+
+    /* Estilos conoce equipo */
+
+    .conoce-equipo {
+        background: var(--color-celeste);
+        height: 350px;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .caja {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .caja h1 {
+        width: 50%;
+        font-size: 36px;
+    }
+
+    .caja a {
+        background: var(--color-azul-oscuro);
+        color: var(--color-blanco);
+    }
+
+}
