@@ -55,10 +55,36 @@
 .navegacion-menu li a {
     color: var(--color-azul-oscuro);
     text-decoration: none;
+    position: relative;
+    background-image: linear-gradient(to right,
+            var(--color-gris-hover),
+            var(--color-azul-oscuro) 100%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.navegacion-menu li a:before {
+    content: '';
+    background: var(--color-violeta);
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
 .navegacion-menu li a:hover {
+    background-position: 0;
     color: var(--color-gris-hover);
+}
+
+.navegacion-menu li a:hover::before {
+    width: 100%;
 }
 
 .navegacion-boton {
@@ -95,9 +121,11 @@ button.nav-boton-contacto:hover::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--color-violeta-hover);
+    background: var(--color-violeta-active);
     opacity: 0.5;
-    animation: fill 1.5s forwards;
+    animation: fill 0.3s forwards;
+    border-radius: 10rem;
+    border: none;
 }
 
 button.nav-boton-contacto:active {
@@ -299,6 +327,7 @@ button.nav-boton-contacto:active {
 
 .tarjeta-mejores-del-mes {
     height: 250px;
+    background: #ebe8e86b;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -306,7 +335,7 @@ button.nav-boton-contacto:active {
 }
 
 .tarjeta-mejores-del-mes img {
-    width: 80px;
+    width: 70px;
 }
 
 .tarjeta-mejores-del-mes h1 {
@@ -378,6 +407,10 @@ button.nav-boton-contacto:active {
 }
 
 /* Estilos footer */
+.footer-movil {
+    display: none;
+}
+
 .footer {
     width: 100%;
     padding-bottom: 20px;
@@ -549,8 +582,12 @@ button.nav-boton-contacto:active {
     }
 }
 
+input[type="email"] {
+    padding-left: 25px;
+}
+
 input[type="email"]::placeholder {
-    padding-left: 15px;
+    padding-left: 1px;
 }
 
 .copyright {
@@ -571,7 +608,10 @@ input[type="email"]::placeholder {
 
     .barra-navegacion {
         width: 80%;
+        height: 100px;
+        margin-bottom: 30px;
         display: flex;
+        margin-top: 30px;
     }
 
     .navegacion-logo {
@@ -579,7 +619,7 @@ input[type="email"]::placeholder {
     }
 
     .logo {
-        width: 200px;
+        width: 125px;
     }
 
     .navegacion-menu {
@@ -598,8 +638,8 @@ input[type="email"]::placeholder {
     }
 
     .navegacion-movil img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
 
     /* Estilos portada */
@@ -620,7 +660,7 @@ input[type="email"]::placeholder {
     }
 
     .portada-titulo {
-        margin-top: 50px;
+        margin-top: 75px;
         width: 100%;
         font-size: 38px;
         line-height: 1.3em;
@@ -676,6 +716,7 @@ input[type="email"]::placeholder {
     }
 
     .contenedor-pasos {
+        width: 100%;
         display: flex;
         height: auto;
         flex-flow: row wrap;
@@ -692,6 +733,7 @@ input[type="email"]::placeholder {
     .tarjeta-pasos {
         flex-basis: 100%;
         margin-top: 25px;
+        margin-left: 30px;
     }
 
     #pasos-titulo {
@@ -754,6 +796,17 @@ input[type="email"]::placeholder {
         display: none;
     }
 
+    .tarjeta-img {
+        position: absolute;
+        margin-top: -30px;
+    }
+
+    .tarjeta-titulo {
+        margin-top: 80px;
+    }
+
+    .tarjeta-body {}
+
     /* Estilos conoce equipo */
 
     .conoce-equipo {
@@ -778,4 +831,247 @@ input[type="email"]::placeholder {
         color: var(--color-blanco);
     }
 
+    /* Estilos footer */
+    .footer {
+        display: none;
+    }
+
+    .footer-movil {
+        display: flex;
+        background: #1E1E26;
+        height: 500px;
+        flex-direction: column;
+    }
+
+    .formulario-movil {
+        display: flex;
+        justify-content: center;
+        height: 25%;
+        align-items: center;
+    }
+
+    .formulario-movil input {
+        background-color: var(--color-blanco);
+        width: 60%;
+        height: 40px;
+        border-radius: 50px;
+    }
+
+    .formulario-movil button {
+        width: 55px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 50px;
+        background-color: var(--color-violeta);
+        border: 1px solid var(--color-violeta);
+        color: var(--color-blanco);
+        margin-left: 5px;
+    }
+
+    .footer-menu {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 35%;
+    }
+
+    .caja-movil {
+        flex-basis: 50%;
+        height: 100%;
+    }
+
+    .caja-movil ul {
+        list-style-type: none;
+        text-align: left;
+        padding: 0;
+    }
+
+    .caja-movil ul li {
+        margin-left: 30px;
+        margin-bottom: 15px;
+    }
+
+    .caja-movil li a {
+        text-decoration: none;
+        color: var(--color-blanco);
+    }
+
+    .footer-redes-sociales-movil {
+        display: flex;
+        flex-direction: row;
+        padding-left: 25px;
+        padding-right: 25px;
+        justify-content: space-around;
+    }
+
+    .caja-logo-footer-movil {
+        display: flex;
+        justify-content: center;
+        height: 15%;
+    }
+
+    .caja-logo-footer-movil img {
+        width: 120px;
+        height: 50px;
+    }
+
+    .copyright-movil {
+        height: 15%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .copyright-movil span {
+        color: var(--color-blanco);
+        font-size: 12px;
+    }
+
+    .contenido-redes-movil {
+        width: 100%;
+        height: 10%;
+    }
+
+    .contenido-redes-movil img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+/* --------------------------------------Media querie 480px -------------------------------------- */
+@media only screen and (min-width: 840px) and (max-width: 1480px) {
+    .navegacion-logo {
+        flex-basis: 20%;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .navegacion-menu {
+        flex-basis: 60%;
+    }
+
+    .navegacion-boton {
+        flex-basis: 20%;
+    }
+
+    .navegacion-menu li {
+        margin: 0 22px 0 10px;
+    }
+
+    .contenedor-portada {
+        height: 450px;
+    }
+
+    .portada-titulo {
+        font-size: 36px;
+        width: 70%;
+    }
+
+    .portada-description {
+        font-size: 16px;
+    }
+
+    .contenedor-pregunta {
+        height: 140px;
+    }
+
+    .cabecera-descripcion p {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+
+    .cabecera-titulo h2 {
+        font-size: 36px;
+    }
+
+    .contenedor-mejores-del-mes {
+        margin: 100px auto;
+    }
+
+    .titulo-mejores-del-mes h1 {
+        font-size: 36px;
+    }
+
+    .contenedor-informacion-pasos {
+        font-size: 16px;
+    }
+
+    .pregunta-pasos {
+        background: rgba(250, 250, 250, 1);
+        padding-top: 50px;
+    }
+
+    .contenedor-pasos {
+        margin: 0 auto;
+    }
+
+    .conoce-equipo {
+        height: 180px;
+    }
+
+    .caja h1 {
+        width: 60%;
+        font-size: 36px;
+    }
+
+    .caja a {
+        font-size: 16px;
+    }
+
+    .contenido-footer {
+        height: 240px;
+    }
+
+    .contenido-footer {
+        width: 82%;
+    }
+
+    .logo-footer {
+        width: 125px;
+        height: auto;
+    }
+
+    .footer-redes-sociales img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .formulario {
+        padding-top: 50px;
+    }
+
+    .caja4 {
+        height: 85%;
+    }
+
+    .formulario input {
+        width: 230px;
+        height: 40px;
+    }
+
+    .formulario button.animated-button {
+        width: 70px;
+        height: 40px;
+        margin-left: 5px;
+    }
+
+    .caja2 ul li a {
+        font-size: 16px;
+    }
+
+    .caja3 ul li a {
+        font-size: 16px;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+
+    .caja3 {
+        margin-top: -38px;
+    }
 }
